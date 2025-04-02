@@ -55,7 +55,7 @@
                     <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition transform hover:-translate-y-1 shadow-lg text-center">
                         Contact Me
                     </a>
-                    <a href="assets/resume/resume.pdf" download="My_Resume" class="border-2 border-blue-600 text-blue-400 hover:bg-gray-800 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition transform hover:-translate-y-1 text-center">
+                    <a href="assets/resume/Kalaivani_Ramani_Laravel_Developer_Resume_2025.pdf" download="My_Resume" target="_blank" class="border-2 border-blue-600 text-blue-400 hover:bg-gray-800 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition transform hover:-translate-y-1 text-center">
                         Download Resume
                     </a>
                 </div>
@@ -118,9 +118,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Left Column -->
                 <div class="space-y-5 animate-fadeIn" style="animation-delay: 0.2s;">
-                    <!-- Laravel -->
                     <div class="bg-gray-700 p-5 rounded-xl shadow-md hover-zoom">
                         <div class="flex items-center mb-2">
                             <div class="bg-blue-900 p-2 rounded-lg mr-3">
@@ -133,7 +131,6 @@
                         </p>
                     </div>
                     
-                    <!-- Frontend -->
                     <div class="bg-gray-700 p-5 rounded-xl shadow-md hover-zoom">
                         <div class="flex items-center mb-2">
                             <div class="bg-blue-900 p-2 rounded-lg mr-3">
@@ -146,7 +143,6 @@
                         </p>
                     </div>
                     
-                    <!-- WordPress -->
                     <div class="bg-gray-700 p-5 rounded-xl shadow-md hover-zoom">
                         <div class="flex items-center mb-2">
                             <div class="bg-indigo-900 p-2 rounded-lg mr-3">
@@ -160,9 +156,7 @@
                     </div>
                 </div>
                 
-                <!-- Right Column -->
                 <div class="space-y-5 animate-fadeIn" style="animation-delay: 0.4s;">
-                    <!-- Databases -->
                     <div class="bg-gray-700 p-5 rounded-xl shadow-md hover-zoom">
                         <div class="flex items-center mb-2">
                             <div class="bg-green-900 p-2 rounded-lg mr-3">
@@ -175,7 +169,6 @@
                         </p>
                     </div>
                     
-                    <!-- Tools -->
                     <div class="bg-gray-700 p-5 rounded-xl shadow-md hover-zoom">
                         <div class="flex items-center mb-2">
                             <div class="bg-yellow-900 p-2 rounded-lg mr-3">
@@ -188,7 +181,6 @@
                         </p>
                     </div>
                     
-                    <!-- CMS -->
                     <div class="bg-gray-700 p-5 rounded-xl shadow-md hover-zoom">
                         <div class="flex items-center mb-2">
                             <div class="bg-pink-900 p-2 rounded-lg mr-3">
@@ -203,7 +195,6 @@
                 </div>
             </div>
             
-            <!-- Skill Tags -->
             <div class="mt-10 animate-fadeIn" style="animation-delay: 0.6s;">
                 <h3 class="text-lg sm:text-xl font-semibold text-center mb-5">Other Proficiencies</h3>
                 <div class="flex flex-wrap justify-center gap-3">
@@ -248,7 +239,6 @@
             </div>
     
             <div class="max-w-3xl mx-auto space-y-2" x-data="{ openItem: 1 }">
-                <!-- Current Job -->
                 <div class="bg-gray-700 rounded-lg overflow-hidden" 
                      @click="openItem !== 1 ? openItem = 1 : openItem = null">
                     <div class="flex justify-between items-center p-4 cursor-pointer">
@@ -281,7 +271,6 @@
                     </div>
                 </div>
     
-                <!-- Internship -->
                 <div class="bg-gray-700 rounded-lg overflow-hidden" 
                      @click="openItem !== 2 ? openItem = 2 : openItem = null">
                     <div class="flex justify-between items-center p-4 cursor-pointer">
@@ -391,93 +380,107 @@
         </div>
     </section>
 
-  
-
     <!-- Projects Section -->
-<section id="projects" class="py-16 sm:py-20 px-4 sm:px-6 bg-gray-900">
-    <div class="container mx-auto">
-        <div class="text-center mb-12 sm:mb-16 animate-fadeIn">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">My <span class="gradient-text">Projects</span></h2>
-            <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
-                Selected work showcasing my expertise.
-            </p>
-        </div>
-
-        <div x-data="{
-            activeTab: 'laravel',
-            projects: {
-                laravel: [
-                    { name: 'Modenas', description: 'Maintained and improved an existing Laravel website by debugging issues and optimizing performance for better user experience.', link: 'https://modenas.my/', icon: 'fab fa-laravel' },
-                    { name: 'Kawasaki', description: 'Maintained and improved an existing Laravel website by debugging issues, optimizing performance, and revamping selected pages for better user experience.', link: 'https://kawasaki.com.my/', icon: 'fab fa-laravel' },
-                    { name: 'House Rental Management System for UMP', description: 'University thesis project for UMP housing management.', link: '#', button: 'Demo', icon: 'fab fa-laravel' }
-                ],
-                wordpress: [
-                    { name: 'RedOne Mobile Website', description: 'Maintain and expand a client’s WordPress website by managing updates, fixing issues, and designing new web pages for better functionality and user experience.', link: 'https://www.redonemobile.com.my/en/', icon: 'fab fa-wordpress' },
-                    { name: 'Poxy Clinical V2', description: 'Working on an ongoing clinical web application project, currently in local development, with a focus on building robust features and enhancing performance.', link: '#', button: 'Demo', icon: 'fab fa-wordpress' }
-                ],
-                design: [
-                    { name: 'Practice 1', description: 'A modern and visually appealing restaurant website featuring a clean layout, intuitive navigation, and engaging visuals to enhance user experience. Designed for optimal responsiveness and accessibility.', link: '#', button: 'Demo', icon: 'fas fa-home' },
-                    { name: 'Practice 2', description: 'A sleek and responsive business website with a flexible layout and smooth animation effects. This project highlights my skills in building structured UI components and enhancing user interaction.', link: 'https://www.awesomescreenshot.com/video/38288175?key=614ad842d40e235edb523e1bec8ead54', button: 'Demo', icon: 'fas fa-home' },
-                    { name: 'Practice 3', description: 'A dynamic real estate website with interactive listings, detailed property views, and smooth animation effects', link: '#', button: 'Demo', icon: 'fas fa-home' }
-                ]
-            }
-        }" class="animate-fadeIn" style="animation-delay: 0.2s;">
-            <!-- Tab Buttons -->
-            <div class="max-w-md mx-auto mb-10">
-                <div class="flex flex-wrap justify-center mb-4 space-x-4 p-2 bg-white rounded-lg shadow-md">
-                    <button @click="activeTab = 'laravel'" 
-                            :class="{ 'bg-blue-600 text-white': activeTab === 'laravel', 'text-blue-400': activeTab !== 'laravel' }" 
-                            class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
-                        Laravel
-                    </button>
-                    <button @click="activeTab = 'wordpress'" 
-                            :class="{ 'bg-blue-600 text-white': activeTab === 'wordpress', 'text-blue-400': activeTab !== 'wordpress' }" 
-                            class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
-                        WordPress
-                    </button>
-                    <button @click="activeTab = 'design'" 
-                            :class="{ 'bg-blue-600 text-white': activeTab === 'design', 'text-blue-400': activeTab !== 'design' }" 
-                            class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
-                        Designs
-                    </button>
-                </div>
+    <section id="projects" class="py-16 sm:py-20 px-4 sm:px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-12 sm:mb-16 animate-fadeIn">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">My <span class="gradient-text">Projects</span></h2>
+                <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
+                    Selected work showcasing my expertise.
+                </p>
             </div>
 
-            <!-- Tab Contents -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <template x-for="project in projects[activeTab]" :key="project.name">
-                    <div class="tab-content">
-                        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-zoom">
-                            <div class="h-40 sm:h-48 bg-gradient-to-r from-blue-600 to-indigo-700 flex items-center justify-center">
-                                <i :class="project.icon + ' text-white text-5xl sm:text-6xl'"></i>
-                            </div>
-                            <div class="p-5 sm:p-6">
-                                <h3 class="text-lg sm:text-xl font-bold mb-2" x-text="project.name"></h3>
-                                <p class="text-sm sm:text-base text-gray-300 mb-4" x-text="project.description"></p>
-                                <div class="flex space-x-3">
-                                    <a :href="project.link" target="_blank" 
-                                       class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
-                                       <span x-text="project.button || 'Live Site'"></span>
-                                    </a>
-                                    <template x-if="project.button">
-                                        <button @click="openModal(project.name)" class="border border-gray-600 hover:bg-gray-700 px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
-                                            Screenshots
-                                        </button>
-                                    </template>
+            <div x-data="{
+                activeTab: 'laravel',
+                projects: {
+                    laravel: [
+                        { name: 'Modenas', description: 'Maintained and improved an existing Laravel website by debugging issues and optimizing performance for better user experience.', link: 'https://modenas.my/', icon: 'fab fa-laravel' },
+                        { name: 'Kawasaki', description: 'Maintained and improved an existing Laravel website by debugging issues, optimizing performance, and revamping selected pages for better user experience.', link: 'https://kawasaki.com.my/', icon: 'fab fa-laravel' },
+                        { name: 'House Rental Management System for UMP', description: 'University thesis project for UMP housing management.', link: '#', button: 'Demo', icon: 'fab fa-laravel' }
+                    ],
+                    wordpress: [
+                        { name: 'RedOne Mobile Website', description: 'Maintain and expand a client’s WordPress website by managing updates, fixing issues, and designing new web pages for better functionality and user experience.', link: 'https://www.redonemobile.com.my/en/', icon: 'fab fa-wordpress' },
+                        { name: 'Poxy Clinical V2', description: 'Working on an ongoing clinical web application project, currently in local development, with a focus on building robust features and enhancing performance.', link: '#', button: 'Demo', icon: 'fab fa-wordpress' }
+                    ],
+                    design: [
+                        { name: 'Practice 1', description: 'A modern and visually appealing restaurant website featuring a clean layout, intuitive navigation, and engaging visuals to enhance user experience. Designed for optimal responsiveness and accessibility.', link: 'https://tinyurl.com/23osnvsm', button: 'Demo', icon: 'fas fa-home' },
+                        { name: 'Practice 2', description: 'A sleek and responsive business website with a flexible layout and smooth animation effects. This project highlights my skills in building structured UI components and enhancing user interaction.', link: 'https://tinyurl.com/24et8xhn', button: 'Demo', icon: 'fas fa-home' },
+                        { name: 'Practice 3', description: 'A dynamic real estate website with interactive listings, detailed property views, and smooth animation effects', link: 'https://tinyurl.com/2ddk7qzu', button: 'Demo', icon: 'fas fa-home' }
+                    ]
+                }
+            }" class="animate-fadeIn" style="animation-delay: 0.2s;">
+                <!-- Tab Buttons -->
+                <div class="max-w-md mx-auto mb-10">
+                    <div class="flex flex-wrap justify-center mb-4 space-x-4 p-2 bg-white rounded-lg shadow-md">
+                        <button @click="activeTab = 'laravel'" 
+                                :class="{ 'bg-blue-600 text-white': activeTab === 'laravel', 'text-blue-400': activeTab !== 'laravel' }" 
+                                class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
+                            Laravel
+                        </button>
+                        <button @click="activeTab = 'wordpress'" 
+                                :class="{ 'bg-blue-600 text-white': activeTab === 'wordpress', 'text-blue-400': activeTab !== 'wordpress' }" 
+                                class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
+                            WordPress
+                        </button>
+                        <button @click="activeTab = 'design'" 
+                                :class="{ 'bg-blue-600 text-white': activeTab === 'design', 'text-blue-400': activeTab !== 'design' }" 
+                                class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
+                            Designs
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <template x-for="project in projects[activeTab]" :key="project.name">
+                        <div class="tab-content">
+                            <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-zoom">
+                                <div class="h-40 sm:h-48 bg-gradient-to-r from-blue-600 to-indigo-700 flex items-center justify-center">
+                                    <i :class="project.icon + ' text-white text-5xl sm:text-6xl'"></i>
+                                </div>
+                                <div class="p-5 sm:p-6">
+                                    <h3 class="text-lg sm:text-xl font-bold mb-2" x-text="project.name"></h3>
+                                    <p class="text-sm sm:text-base text-gray-300 mb-4" x-text="project.description"></p>
+                                    <div class="flex space-x-3">
+                                        <a :href="project.link" target="_blank" 
+                                        class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                        <span x-text="project.button || 'Live Site'"></span>
+                                        </a>
+                                        <template x-if="project.button">
+                                            <button @click="openModal(project.name)" class="border border-gray-600 hover:bg-gray-700 px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                                Screenshots
+                                            </button>
+                                        </template>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </template>
+                    </template>
+                </div>
+                <p x-show="activeTab === 'design'" class="text-gray-400 text-center mt-6">
+                    <b>Disclaimer</b>: This design is a practice project based on a concept I found through Google, created to refine my frontend development skills.
+                </p>
             </div>
-            <p x-show="activeTab === 'design'" class="text-gray-400 text-center mt-6">
-                <b>Disclaimer</b>: This design is a practice project based on a concept I found through Google, created to refine my frontend development skills.
-            </p>
+        </div>
+
+         <!-- Image Modal -->
+        <div id="imageModal" class="fixed inset-0 bg-gray-400 bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-gray-800 rounded-lg max-w-4xl max-h-screen overflow-auto w-full">
+                <div class="flex justify-between items-center p-4 border-b border-gray-700">
+                    <h3 class="text-lg sm:text-xl font-bold">Project Screenshots</h3>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="p-4" id="modalContent">
+                    <!-- Images injected via JS -->
+                </div>
+            </div>
         </div>
     </section>
+    
 
-
-    <!-- Contact Section (Simplified WhatsApp Only) -->
+    <!-- Contact Section -->
     <section id="contact" class="py-16 sm:py-20 px-4 sm:px-6 bg-gray-900">
         <div class="container mx-auto max-w-2xl">
             <div class="text-center mb-10 sm:mb-12 animate-fadeIn">
@@ -495,7 +498,7 @@
                         <p class="text-sm sm:text-base text-gray-400 mb-4">
                             I'm just one message away on WhatsApp.
                         </p>
-                        <a href="https://wa.me/01161601650" target="_blank" 
+                        <a href="https://wa.me/601161601650" target="_blank" 
                            class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-2 sm:py-3 px-6 sm:px-8 rounded-lg transition transform hover:-translate-y-1 shadow-lg">
                            <i class="fab fa-whatsapp mr-2"></i> Message Me
                         </a>
@@ -504,32 +507,14 @@
                         <a href="#" class="text-gray-400 hover:text-blue-400 transition">
                             <i class="fab fa-github text-xl sm:text-2xl"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                        <a href="https://www.linkedin.com/in/kalaivaniramani-4a4102250" class="text-gray-400 hover:text-blue-400 transition">
                             <i class="fab fa-linkedin-in text-xl sm:text-2xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition">
-                            <i class="fab fa-twitter text-xl sm:text-2xl"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Image Modal -->
-    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-gray-800 rounded-lg max-w-4xl max-h-screen overflow-auto w-full">
-            <div class="flex justify-between items-center p-4 border-b border-gray-700">
-                <h3 class="text-lg sm:text-xl font-bold">Project Screenshots</h3>
-                <button onclick="closeModal()" class="text-gray-400 hover:text-white">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="p-4" id="modalContent">
-                <!-- Images injected via JS -->
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-400 py-8 sm:py-10 px-4 sm:px-6">
@@ -543,7 +528,7 @@
                     <a href="#" class="hover:text-blue-400 transition text-sm sm:text-base">
                         <i class="fab fa-github mr-1"></i> GitHub
                     </a>
-                    <a href="#" class="hover:text-blue-400 transition text-sm sm:text-base">
+                    <a href="https://www.linkedin.com/in/kalaivaniramani-4a4102250" class="hover:text-blue-400 transition text-sm sm:text-base">
                         <i class="fab fa-linkedin-in mr-1"></i> LinkedIn
                     </a>
                 </div>
