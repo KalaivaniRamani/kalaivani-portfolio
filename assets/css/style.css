@@ -1,0 +1,25 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+}
+.skill-bar {
+    transition: width 1.5s ease-in-out;
+}
+.hover-zoom {
+    transition: transform 0.3s ease;
+}
+.hover-zoom:hover {
+    transform: scale(1.05);
+}
+.gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(45deg, #5c6ef6, #b5c7fd);
+}
+#imageModal {
+    transition: opacity 0.3s ease;
+}

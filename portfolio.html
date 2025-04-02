@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Laravel Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        .hover-zoom {
+            transition: transform 0.3s ease;
+        }
+        .hover-zoom:hover {
+            transform: scale(1.05);
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(45deg, #3b82f6, #60a5fa);
+        }
+        #imageModal {
+            transition: opacity 0.3s ease;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid #3b82f6;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 0;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-800 shadow-md z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text">YourName</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+                <a href="#education" class="hover:text-blue-400 transition">Education</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-gray-800 w-full px-6 py-4" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+                <a href="#education" class="hover:text-blue-400 transition">Education</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 animate-fadeIn" style="animation-delay: 0.2s;">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="gradient-text">Your Name</span></h1>
+                <h2 class="text-2xl md:text-3xl text-gray-400 mb-6">Laravel & Full Stack Developer</h2>
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                    I build robust, scalable web applications with Laravel. With professional experience in both backend and frontend development.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition transform hover:-translate-y-1 shadow-lg">
+                        Contact Me
+                    </a>
+                    <a href="/path/to/your-resume.pdf" download class="border-2 border-blue-600 text-blue-400 hover:bg-gray-800 px-6 py-3 rounded-lg font-medium transition transform hover:-translate-y-1">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center animate-fadeIn" style="animation-delay: 0.4s;">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl hover-zoom">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+                         alt="Profile Image" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-blue-600 opacity-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-20 bg-gray-800 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 animate-fadeIn">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Work <span class="gradient-text">Experience</span></h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    My professional journey in web development
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Current Job -->
+                <div class="bg-gray-700 p-6 rounded-xl shadow-md hover-zoom animate-fadeIn" style="animation-delay: 0.2s;">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <h3 class="text-xl font-bold">4 Thirteen Group</h3>
+                        <span class="text-blue-400">Oct 2023 - Present</span>
+                    </div>
+                    <h4 class="text-blue-300 mb-3">Web Developer</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Maintained and enhanced Laravel-based projects, implementing new features and bug fixes</li>
+                        <li>Developed custom WordPress solutions tailored to business needs</li>
+                        <li>Managed WordPress website maintenance, updates, and optimizations</li>
+                    </ul>
+                </div>
+
+                <!-- Internship -->
+                <div class="bg-gray-700 p-6 rounded-xl shadow-md hover-zoom animate-fadeIn" style="animation-delay: 0.3s;">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <h3 class="text-xl font-bold">Filmplace</h3>
+                        <span class="text-blue-400">Mar 2023 - Aug 2023</span>
+                    </div>
+                    <h4 class="text-blue-300 mb-3">Software Developer Intern</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Fixed bugs and improved performance in Laravel applications</li>
+                        <li>Conducted SEO analysis and edited WordPress blogs</li>
+                        <li>Enhanced frontend designs and performed manual testing</li>
+                    </ul>
+                </div>
+
+                <!-- Part-time -->
+                <div class="bg-gray-700 p-6 rounded-xl shadow-md hover-zoom animate-fadeIn" style="animation-delay: 0.4s;">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <h3 class="text-xl font-bold">Mahiran Digital Sdn.Bhd</h3>
+                        <span class="text-blue-400">2022 - 2023</span>
+                    </div>
+                    <h4 class="text-blue-300 mb-3">Part-Time Web Developer</h4>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Worked on projects as both backend and frontend developer</li>
+                        <li>Ensured seamless integration between frontend and backend systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 animate-fadeIn">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Education</span></h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Academic background and specialization
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-xl shadow-md hover-zoom animate-fadeIn">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                    <h3 class="text-xl font-bold">Bachelor of Computer Science</h3>
+                    <span class="text-blue-400">2019 - 2023</span>
+                </div>
+                <h4 class="text-blue-300 mb-2">University Malaysia Pahang, Pekan Pahang</h4>
+                <p class="text-gray-300 mb-4">
+                    Specialization in Software Development & Web Technologies
+                </p>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h5 class="font-semibold text-blue-300 mb-2">Thesis:</h5>
+                    <p class="text-gray-300">
+                        "House Rental Management System for UMP" - Developed a comprehensive system for managing university housing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-16 sm:py-20 px-4 sm:px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-12 sm:mb-16 animate-fadeIn">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">My <span class="gradient-text">Projects</span></h2>
+                <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
+                    Selected work showcasing my expertise.
+                </p>
+            </div>
+            
+            <div x-data="{ activeTab: 'laravel' }" class="animate-fadeIn" style="animation-delay: 0.2s;">
+                <div class="max-w-md mx-auto mb-10">
+                    <div class="flex flex-wrap justify-center mb-4 space-x-4 p-2 bg-white rounded-lg shadow-md">
+                        <button @click="activeTab = 'laravel'" 
+                                :class="{ 'bg-blue-600 text-white': activeTab === 'laravel', 'text-blue-400': activeTab !== 'laravel' }" 
+                                class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
+                            Laravel
+                        </button>
+                        <button @click="activeTab = 'wordpress'" 
+                                :class="{ 'bg-blue-600 text-white': activeTab === 'wordpress', 'text-blue-400': activeTab !== 'wordpress' }" 
+                                class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
+                            WordPress
+                        </button>
+                        <button @click="activeTab = 'design'" 
+                                :class="{ 'bg-blue-600 text-white': activeTab === 'design', 'text-blue-400': activeTab !== 'design' }" 
+                                class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
+                            Designs
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div x-show="activeTab === 'laravel'" class="tab-content active">
+                        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-zoom">
+                            <div class="h-40 sm:h-48 bg-gradient-to-r from-blue-600 to-indigo-700 flex items-center justify-center">
+                                <i class="fab fa-laravel text-white text-5xl sm:text-6xl"></i>
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg sm:text-xl font-bold mb-2">Modenas</h3>
+                                <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                    Maintained and improved an existing Laravel website by debugging issues and optimizing performance for better user experience.
+                                </p>
+                                <div class="flex space-x-3">
+                                    <a href="https://modenas.my/" target="_blank" 
+                                       class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                       Live Site
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-show="activeTab === 'laravel'" class="tab-content active">
+                        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-zoom">
+                            <div class="h-40 sm:h-48 bg-gradient-to-r from-blue-600 to-indigo-700 flex items-center justify-center">
+                                <i class="fab fa-laravel text-white text-5xl sm:text-6xl"></i>
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg sm:text-xl font-bold mb-2">Kawasaki</h3>
+                                <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                    Maintained and improved an existing Laravel website by debugging issues, optimizing performance, 
+                                    and revamping selected pages for better user experience.
+                                </p>
+                                <div class="flex space-x-3">
+                                    <a href="https://kawasaki.com.my/" target="_blank" 
+                                       class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                       Live Site
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-show="activeTab === 'laravel'" class="tab-content active">
+                        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-zoom">
+                            <div class="h-40 sm:h-48 bg-gradient-to-r from-blue-600 to-indigo-700 flex items-center justify-center">
+                                <i class="fab fa-laravel text-white text-5xl sm:text-6xl"></i>
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg sm:text-xl font-bold mb-2">House Rental Management System for UMP</h3>
+                                <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                    <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                        University thesis project for UMP housing management.
+                                    </p>
+                                </p>
+                                <div class="flex space-x-3">
+                                    <button onclick="openModal('project1')" class="border border-gray-600 hover:bg-gray-700 px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                        Screenshots
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div x-show="activeTab === 'wordpress'" class="tab-content">
+                        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-zoom">
+                            <div class="h-40 sm:h-48 bg-gradient-to-r from-blue-600 to-cyan-700 flex items-center justify-center">
+                                <i class="fab fa-wordpress text-white text-5xl sm:text-6xl"></i>
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg sm:text-xl font-bold mb-2">RedOne Mobile Website </h3>
+                                <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                    <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                        Maintain and expand a client’s WordPress website by managing updates, 
+                                        fixing issues, and designing new web pages for better functionality and user experience.
+                                    </p>
+                                    
+                                </p>
+                                <div class="flex space-x-3">
+                                    <a href="https://www.redonemobile.com.my/en/" target="_blank" 
+                                       class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                       Live Site
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-show="activeTab === 'wordpress'" class="tab-content">
+                        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-zoom">
+                            <div class="h-40 sm:h-48 bg-gradient-to-r from-blue-600 to-cyan-700 flex items-center justify-center">
+                                <i class="fab fa-wordpress text-white text-5xl sm:text-6xl"></i>
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg sm:text-xl font-bold mb-2">Poxy Clinical V2</h3>
+                                <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                    <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                        Working on an ongoing clinical web application project, currently in local development, with a focus on building robust features and enhancing performance.    
+                                    </p>
+                                    
+                                </p>
+                                <div class="flex space-x-3">
+                                    <!-- <a href="https://www.redonemobile.com.my/en/" target="_blank" 
+                                       class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                       Live Site
+                                    </a> -->
+                                    <button onclick="openModal('project2')" class="border border-gray-600 hover:bg-gray-700 px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                        Screenshots
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-show="activeTab === 'design'" class="tab-content">
+                        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-zoom">
+                            <div class="h-40 sm:h-48 bg-gradient-to-r from-blue-600 to-cyan-700 flex items-center justify-center">
+                                <i class="fas fa-home  text-white text-5xl sm:text-6xl"></i>
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg sm:text-xl font-bold mb-2">Practice 1</h3>
+                                <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                    <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                        University thesis project for UMP housing management.
+                                    </p>
+                                </p>
+                                <div class="flex space-x-3">
+                                    <button onclick="openModal('project3')" class="border border-gray-600 hover:bg-gray-700 px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                        Screenshots
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-show="activeTab === 'design'" class="tab-content">
+                        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-zoom">
+                            <div class="h-40 sm:h-48 bg-gradient-to-r from-blue-600 to-cyan-700 flex items-center justify-center">
+                                <i class="fas fa-home  text-white text-5xl sm:text-6xl"></i>
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg sm:text-xl font-bold mb-2">Practice 2</h3>
+                                <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                    <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                        University thesis project for UMP housing management.
+                                    </p>
+                                </p>
+                                <div class="flex space-x-3">
+                                    <button onclick="openModal('project3')" class="border border-gray-600 hover:bg-gray-700 px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                        Screenshots
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-show="activeTab === 'design'" class="tab-content">
+                        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover-zoom">
+                            <div class="h-40 sm:h-48 bg-gradient-to-r from-blue-600 to-cyan-700 flex items-center justify-center">
+                                <i class="fas fa-home  text-white text-5xl sm:text-6xl"></i>
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <h3 class="text-lg sm:text-xl font-bold mb-2">Practice 3</h3>
+                                <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                    <p class="text-sm sm:text-base text-gray-300 mb-4">
+                                        University thesis project for UMP housing management.
+                                    </p>
+                                </p>
+                                <div class="flex space-x-3">
+                                    <button onclick="openModal('project3')" class="border border-gray-600 hover:bg-gray-700 px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                        Screenshots
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-gray-800">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 animate-fadeIn">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Projects</span></h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Selected work showcasing my expertise
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-700 rounded-xl overflow-hidden shadow-lg hover-zoom animate-fadeIn" style="animation-delay: 0.2s;">
+                    <div class="h-48 bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center">
+                        <i class="fab fa-laravel text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-300 mb-4">
+                            Custom Laravel e-commerce with payment integration.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a href="https://ecom-demo.example.com" target="_blank" 
+                               class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm">
+                               Live Demo
+                            </a>
+                            <button onclick="openModal('project1')" 
+                                    class="border border-gray-600 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm">
+                               Screenshots
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-gray-700 rounded-xl overflow-hidden shadow-lg hover-zoom animate-fadeIn" style="animation-delay: 0.3s;">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-600 flex items-center justify-center">
+                        <i class="fab fa-wordpress text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Corporate Website</h3>
+                        <p class="text-gray-300 mb-4">
+                            Custom WordPress theme for a client.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a href="https://wp-demo.example.com" target="_blank" 
+                               class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm">
+                               Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-gray-700 rounded-xl overflow-hidden shadow-lg hover-zoom animate-fadeIn" style="animation-delay: 0.4s;">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-500 flex items-center justify-center">
+                        <i class="fas fa-home text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">House Rental System</h3>
+                        <p class="text-gray-300 mb-4">
+                            University thesis project for UMP housing management.
+                        </p>
+                        <button onclick="openModal('project3')" 
+                                class="border border-gray-600 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm w-full">
+                           View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16 animate-fadeIn">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's <span class="gradient-text">Connect</span></h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    Have a project in mind? Reach out via WhatsApp!
+                </p>
+            </div>
+            
+            <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden animate-fadeIn" style="animation-delay: 0.2s;">
+                <div class="p-10 text-center">
+                    <div class="bg-blue-900 bg-opacity-20 p-8 rounded-lg mb-8">
+                        <i class="fas fa-comment-dots text-blue-400 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-3">Chat Directly</h3>
+                        <p class="text-gray-400 mb-6 max-w-lg mx-auto">
+                            I'm just one message away on WhatsApp. Let's discuss your project!
+                        </p>
+                        <a href="https://wa.me/1234567890" target="_blank" 
+                           class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-8 rounded-lg transition transform hover:-translate-y-1 shadow-lg">
+                           <i class="fab fa-whatsapp mr-2"></i> Message Me on WhatsApp
+                        </a>
+                    </div>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
+                        </a>
+                        <a href="mailto:your.email@example.com" class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-gray-800 rounded-lg max-w-4xl max-h-screen overflow-auto w-full">
+            <div class="flex justify-between items-center p-4 border-b border-gray-700">
+                <h3 class="text-xl font-bold">Project Details</h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6" id="modalContent">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-12 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold gradient-text">YourName</a>
+                    <p class="mt-2">Laravel & Full Stack Developer</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-blue-400 transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-400 transition">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-400 transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 YourName. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Image Modal Logic
+        function openModal(projectId) {
+            const modal = document.getElementById('imageModal');
+            const content = document.getElementById('modalContent');
+            
+            if (projectId === 'project1') {
+                content.innerHTML = `
+                    <h4 class="text-xl font-bold mb-4">E-Commerce Platform</h4>
+                    <p class="text-gray-300 mb-4">Laravel-based e-commerce solution with:</p>
+                    <ul class="list-disc list-inside text-gray-300 mb-6 space-y-2">
+                        <li>Product management system</li>
+                        <li>Payment gateway integration</li>
+                        <li>User authentication</li>
+                        <li>Admin dashboard</li>
+                    </ul>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <img src="https://via.placeholder.com/800x500/1e293b/3b82f6?text=E-Commerce+Home" alt="Homepage" class="rounded-lg shadow">
+                        <img src="https://via.placeholder.com/800x500/1e293b/3b82f6?text=Product+Page" alt="Product Page" class="rounded-lg shadow">
+                    </div>
+                `;
+            } else if (projectId === 'project3') {
+                content.innerHTML = `
+                    <h4 class="text-xl font-bold mb-4">House Rental Management System</h4>
+                    <p class="text-gray-300 mb-2"><strong>University Thesis Project</strong></p>
+                    <p class="text-gray-300 mb-4">Developed for University Malaysia Pahang to manage student housing allocations.</p>
+                    <ul class="list-disc list-inside text-gray-300 mb-6 space-y-2">
+                        <li>Admin dashboard for housing management</li>
+                        <li>Student application portal</li>
+                        <li>Automated room allocation system</li>
+                        <li>Reporting and analytics</li>
+                    </ul>
+                    <div class="grid grid-cols-1 gap-4">
+                        <img src="https://via.placeholder.com/800x400/1e293b/3b82f6?text=UMP+Housing+System" alt="Dashboard" class="rounded-lg shadow">
+                    </div>
+                `;
+            }
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
