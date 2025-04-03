@@ -20,16 +20,29 @@ function openModal(projectName) {
 
         // Map project names to corresponding image paths
         const projectImages = {
-            "House Rental Management System for UMP": "assets/images/screenshot1.jpg",
-            "Poxy Clinical V2": "assets/images/hobby/flex-start.png",
-            "Practice 1": "assets/images/hobby/restaurant.png",
-            "Practice 2": "assets/images/hobby/flex-start.png",
-            "Practice 3": "assets/images/hobby/property.png"
+            "House Rental Management System for UMP": [
+                "assets/images/laravel/final-yr-1.png",
+                "assets/images/laravel/final-yr-2.png",
+                "assets/images/laravel/final-yr-3.png",
+                "assets/images/laravel/final-yr-4.png",
+                "assets/images/laravel/final-yr-5.png",
+                "assets/images/laravel/final-yr-6.png"
+            ],
+            "Practice 1": ["assets/images/hobby/restaurant.png"],
+            "Practice 2": ["assets/images/hobby/flex-start.png"],
+            "Practice 3": ["assets/images/hobby/property.png"]
         };
 
-        // Check if the project has an associated image
+        // Check if the project has associated images
         if (projectImages[projectName]) {
-            content.innerHTML = `<img src="${projectImages[projectName]}" alt="${projectName}" class="rounded-lg shadow w-full">`;
+            projectImages[projectName].forEach(imageSrc => {
+                const imgElement = document.createElement("img");
+                imgElement.src = imageSrc;
+                imgElement.alt = projectName;
+                imgElement.classList.add("rounded-lg", "shadow", "w-full", "mb-4");
+                content.appendChild(imgElement);
+            });
+
             modal.classList.remove("hidden"); // Show the modal
         } else {
             alert("No screenshots available for this project.");

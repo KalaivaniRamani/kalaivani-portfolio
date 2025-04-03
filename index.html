@@ -55,7 +55,7 @@
                     <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition transform hover:-translate-y-1 shadow-lg text-center">
                         Contact Me
                     </a>
-                    <a href="assets/resume/Kalaivani_Ramani_Laravel_Developer_Resume_2025.pdf" download="My_Resume" target="_blank" class="border-2 border-blue-600 text-blue-400 hover:bg-gray-800 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition transform hover:-translate-y-1 text-center">
+                    <a href="assets/resume/Kalaivani_Ramani_Laravel_Developer_Resume_2025.pdf" download="Kalaivani_Ramani_Laravel_Developer_Resume_2025" target="_blank" class="border-2 border-blue-600 text-blue-400 hover:bg-gray-800 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition transform hover:-translate-y-1 text-center">
                         Download Resume
                     </a>
                 </div>
@@ -76,7 +76,7 @@
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 animate-fadeIn" style="animation-delay: 0.2s;">
-                    <div class="relative h-64 sm:h-72 w-64 sm:w-72 mx-auto rounded-xl overflow-hidden shadow-2xl hover-zoom">
+                    <div class="relative w-full h-full mx-auto rounded-xl overflow-hidden shadow-2xl hover-zoom">
                         <img src="assets/images/about-me.png" 
                              alt="About Me" 
                              class="w-full h-full object-cover">
@@ -127,7 +127,7 @@
                             <h3 class="text-lg sm:text-xl font-semibold">Laravel</h3>
                         </div>
                         <p class="text-sm sm:text-base text-gray-300 mb-3">
-                            API development, Eloquent ORM, Authentication, Packages.
+                            Eloquent ORM, Authentication, Packages.
                         </p>
                     </div>
                     
@@ -139,7 +139,7 @@
                             <h3 class="text-lg sm:text-xl font-semibold">Frontend</h3>
                         </div>
                         <p class="text-sm sm:text-base text-gray-300 mb-3">
-                            HTML5, CSS3, JavaScript, jQuery, Tailwind, Bootstrap.
+                            HTML, CSS, JavaScript, jQuery, Tailwind, Bootstrap.
                         </p>
                     </div>
                     
@@ -177,7 +177,7 @@
                             <h3 class="text-lg sm:text-xl font-semibold">Tools</h3>
                         </div>
                         <p class="text-sm sm:text-base text-gray-300 mb-3">
-                            Git, GitHub, GitLab, Postman, RESTful APIs, Linux.
+                            Git, GitHub, GitLab, Postman, SourceTree, RESTful APIs, Linux.
                         </p>
                     </div>
                     
@@ -359,6 +359,7 @@
                         <p class="text-gray-300 mb-2">Specialization in Software Development & Web Technologies</p>
                         <div class="bg-gray-700 p-3 rounded-lg">
                             <p class="text-sm text-gray-300 font-medium">Thesis: House Rental Management System for UMP</p>
+                            <p class="text-sm text-gray-300 font-medium"><b>Award</b> : Gold medalist in Final Year Project.</p>
                         </div>
                     </div>
                 </div>
@@ -400,7 +401,7 @@
                     ],
                     wordpress: [
                         { name: 'RedOne Mobile Website', description: 'Maintain and expand a client’s WordPress website by managing updates, fixing issues, and designing new web pages for better functionality and user experience.', link: 'https://www.redonemobile.com.my/en/', icon: 'fab fa-wordpress' },
-                        { name: 'Poxy Clinical V2', description: 'Working on an ongoing clinical web application project, currently in local development, with a focus on building robust features and enhancing performance.', link: '#', button: 'Demo', icon: 'fab fa-wordpress' }
+                        { name: 'Poxy Clinical V2', description: 'Currently developing a clinical web application locally, focusing on robust features and performance optimization. Due to company policy, images cannot be shared before deployment.', link: '#', button: 'Demo', icon: 'fab fa-wordpress' }
                     ],
                     design: [
                         { name: 'Practice 1', description: 'A modern and visually appealing restaurant website featuring a clean layout, intuitive navigation, and engaging visuals to enhance user experience. Designed for optimal responsiveness and accessibility.', link: 'https://tinyurl.com/23osnvsm', button: 'Demo', icon: 'fas fa-home' },
@@ -441,17 +442,19 @@
                                 <div class="p-5 sm:p-6">
                                     <h3 class="text-lg sm:text-xl font-bold mb-2" x-text="project.name"></h3>
                                     <p class="text-sm sm:text-base text-gray-300 mb-4" x-text="project.description"></p>
-                                    <div class="flex space-x-3">
-                                        <a :href="project.link" target="_blank" 
-                                        class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
-                                        <span x-text="project.button || 'Live Site'"></span>
-                                        </a>
-                                        <template x-if="project.button">
-                                            <button @click="openModal(project.name)" class="border border-gray-600 hover:bg-gray-700 px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
-                                                Screenshots
-                                            </button>
-                                        </template>
-                                    </div>
+                                    <template x-if="project.name !== 'Poxy Clinical V2'">
+                                        <div class="flex space-x-3">
+                                            <a :href="project.link" target="_blank" 
+                                            class="bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                            <span x-text="project.button || 'Live Site'"></span>
+                                            </a>
+                                            <template x-if="project.button">
+                                                <button @click="openModal(project.name)" class="border border-gray-600 hover:bg-gray-700 px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm">
+                                                    Screenshots
+                                                </button>
+                                            </template>
+                                        </div>
+                                    </template>
                                 </div>
                             </div>
                         </div>
