@@ -403,7 +403,7 @@
                         { name: 'RedOne Mobile Website', description: 'Maintain and expand a client’s WordPress website by managing updates, fixing issues, and designing new web pages for better functionality and user experience.', link: 'https://www.redonemobile.com.my/en/', icon: 'fab fa-wordpress' },
                         { name: 'Poxy Clinical V2', description: 'Currently developing a clinical web application locally, focusing on robust features and performance optimization. Due to company policy, images cannot be shared before deployment.', link: '#', button: 'Demo', icon: 'fab fa-wordpress' }
                     ],
-                    design: [
+                    frontend_design: [
                         { name: 'Practice 1', description: 'A modern and visually appealing restaurant website featuring a clean layout, intuitive navigation, and engaging visuals to enhance user experience. Designed for optimal responsiveness and accessibility.', link: 'https://tinyurl.com/23osnvsm', button: 'Demo', icon: 'fas fa-home' },
                         { name: 'Practice 2', description: 'A sleek and responsive business website with a flexible layout and smooth animation effects. This project highlights my skills in building structured UI components and enhancing user interaction.', link: 'https://tinyurl.com/24et8xhn', button: 'Demo', icon: 'fas fa-home' },
                         { name: 'Practice 3', description: 'A dynamic real estate website with interactive listings, detailed property views, and smooth animation effects', link: 'https://tinyurl.com/2ddk7qzu', button: 'Demo', icon: 'fas fa-home' }
@@ -423,10 +423,10 @@
                                 class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
                             WordPress
                         </button>
-                        <button @click="activeTab = 'design'" 
-                                :class="{ 'bg-blue-600 text-white': activeTab === 'design', 'text-blue-400': activeTab !== 'design' }" 
+                        <button @click="activeTab = 'frontend_design'" 
+                                :class="{ 'bg-blue-600 text-white': activeTab === 'frontend_design', 'text-blue-400': activeTab !== 'frontend_design' }" 
                                 class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">
-                            Designs
+                            Frontend Designs
                         </button>
                     </div>
                 </div>
@@ -460,7 +460,7 @@
                         </div>
                     </template>
                 </div>
-                <p x-show="activeTab === 'design'" class="text-gray-400 text-center mt-6">
+                <p x-show="activeTab === 'frontend_design'" class="text-gray-400 text-center mt-6">
                     <b>Disclaimer</b>: This design is a practice project based on a concept I found through Google, created to refine my frontend development skills.
                 </p>
             </div>
