@@ -30,7 +30,16 @@ function openModal(projectName) {
             ],
             "Practice 1": ["assets/images/hobby/restaurant.png"],
             "Practice 2": ["assets/images/hobby/flex-start.png"],
-            "Practice 3": ["assets/images/hobby/property.png"]
+            "Practice 3": ["assets/images/hobby/property.png"],
+            "Laravel + Twill": [
+                "assets/images/fullstack/practice1.png",
+                "assets/images/fullstack/practice2.png",
+                "assets/images/fullstack/practice3.png"
+            ],
+            "Motorcycle Website Concept": [
+                "assets/images/fullstack/admin1.png",
+                "assets/images/fullstack/admin2.png"
+            ],
         };
 
         // Check if the project has associated images
